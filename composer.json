@@ -1,0 +1,21 @@
+{
+    "name": "seyyedam7/savvytech_task",
+    "description": "Savvytech task",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "SavvytechTask\\": "src/",
+            "Resources\\": "resources/"
+        }
+    },
+    "authors": [
+        {
+            "name": "S.Ahmad Mousavi",
+            "email": "mousavi7731@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=8.0",
+        "wp-cli/php-cli-tools": "^0.11.22"
+    }
+}

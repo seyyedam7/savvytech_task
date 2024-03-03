@@ -1,0 +1,12 @@
+<?php
+
+require_once __DIR__ . '/vendor/autoload.php';
+
+$commandManager = new \SavvytechTask\Services\Commands\CommandManager();
+try {
+    $command = $commandManager->makeCommand($argv[1]);
+    $command->handle();
+} catch (ReflectionException $e) {
+    echo $e->getMessage();
+    exit(1);
+}
