@@ -1,6 +1,6 @@
 <?php
 
-namespace SavvytechTask\Services\Commands\Contracts;
+namespace SavvytechTask\Infrastructure\Commands\Contracts;
 
 interface CommandManagerInterface
 {

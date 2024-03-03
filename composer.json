@@ -6,7 +6,10 @@
         "psr-4": {
             "SavvytechTask\\": "src/",
             "Resources\\": "resources/"
-        }
+        },
+        "files": [
+            "src/Infrastructure/helpers.php"
+        ]
     },
     "authors": [
         {

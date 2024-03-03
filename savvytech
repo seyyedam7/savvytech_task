@@ -2,7 +2,7 @@
 
 require_once __DIR__ . '/vendor/autoload.php';
 
-$commandManager = new \SavvytechTask\Services\Commands\CommandManager();
+$commandManager = new \SavvytechTask\Infrastructure\Commands\CommandManager();
 try {
     $command = $commandManager->makeCommand($argv[1]);
     $command->handle();

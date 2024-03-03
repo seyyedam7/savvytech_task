@@ -1,13 +1,13 @@
 <?php
 
-namespace SavvytechTask\Services\Commands;
+namespace SavvytechTask\Infrastructure\Commands;
 
 use DirectoryIterator;
 use InvalidArgumentException;
 use ReflectionClass;
 use ReflectionException;
 use SavvytechTask\Infrastructure\Commands\Contracts\Command;
-use SavvytechTask\Services\Commands\Contracts\CommandManagerInterface;
+use SavvytechTask\Infrastructure\Commands\Contracts\CommandManagerInterface;
 
 class CommandManager implements CommandManagerInterface
 {
@@ -28,7 +28,7 @@ class CommandManager implements CommandManagerInterface
 
                 if ($reflectionClass->implementsInterface(Command::class)) {
                     $properties = $reflectionClass->getDefaultProperties();
-                    if (isset($properties['signature']) && $properties['signature'] === $command) {
+                    if (isset($properties['signature']) && strtolower($properties['signature']) === strtolower($command)) {
                         return new $className();
                     }
                 }
