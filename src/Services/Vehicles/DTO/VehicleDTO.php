@@ -1,6 +1,8 @@
 <?php
 
-namespace SavvytechTask\Services\Vehicle\DTO;
+namespace SavvytechTask\Services\Vehicles\DTO;
+
+use SavvytechTask\Services\Units\Enums\SpeedUnit;
 
 class VehicleDTO
 {
@@ -21,9 +23,9 @@ class VehicleDTO
         return $this->maxSpeed;
     }
 
-    public function getUnit(): string
+    public function getUnit(): SpeedUnit
     {
-        return $this->unit;
+        return SpeedUnit::from($this->unit);
     }
 
     public static function fromArray(array $data): self

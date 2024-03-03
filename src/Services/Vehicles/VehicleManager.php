@@ -1,11 +1,11 @@
 <?php
 
-namespace SavvytechTask\Services\Vehicle;
+namespace SavvytechTask\Services\Vehicles;
 
 use Exception;
-use SavvytechTask\Services\Vehicle\Contracts\Vehicle;
-use SavvytechTask\Services\Vehicle\DTO\VehicleDTO;
-use SavvytechTask\Services\Vehicle\DTO\VehiclesDTO;
+use SavvytechTask\Services\Vehicles\Contracts\Vehicle;
+use SavvytechTask\Services\Vehicles\DTO\VehicleDTO;
+use SavvytechTask\Services\Vehicles\DTO\VehiclesDTO;
 
 class VehicleManager implements Vehicle
 {
@@ -13,23 +13,19 @@ class VehicleManager implements Vehicle
     private VehiclesDTO $vehicles;
 
     //TODO: pass vehicles file in other class
-    public function __construct() {
+    public function __construct()
+    {
         $jsonString = file_get_contents(resources_path($this->vehiclesFileName));
         $this->setVehicles($jsonString);
     }
 
-    private function setVehicles(bool|string $jsonString): void
+    public function setVehicles(bool|string $jsonString): void
     {
         if ($jsonString === false) {
             $this->vehicles = new VehiclesDTO();
         } else {
             $this->vehicles = VehiclesDTO::fromArray(json_decode($jsonString, true));
         }
-    }
-
-    public function getVehicles(): VehiclesDTO
-    {
-        return $this->vehicles;
     }
 
     public function getVehicleNames(): array

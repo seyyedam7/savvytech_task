@@ -1,6 +1,6 @@
 <?php
 
-namespace SavvytechTask\Services\Vehicle\DTO;
+namespace SavvytechTask\Services\Vehicles\DTO;
 
 use Exception;
 
